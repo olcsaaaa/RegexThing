@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
-        Title="Regex validation" Height="450" Width="800" ResizeMode="CanResizeWithGrip" SizeToContent="Height" MinHeight="450" MinWidth="800" MaxHeight="900" MaxWidth="1600">
+        Title="Regex validation" Height="450" Width="800" ResizeMode="CanResizeWithGrip" SizeToContent="Height" MinHeight="600" MinWidth="800" MaxHeight="900" MaxWidth="1600">
 
     <Window.Resources>
 
@@ -40,16 +40,15 @@
             </Style.Resources>
         </Style>
 
-        <!--InputPanel-->
-        <Style TargetType="StackPanel" x:Key="InputPanel">
-            <Setter Property="Margin" Value="10,10,10,10"/>
+        <!--Panel-->
+        <Style TargetType="StackPanel" x:Key="Panel">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
         <!--InputBorder-->
         <Style TargetType="Border" x:Key="InputBorder">
-            <!--<Setter Property="BorderBrush" Value="#7E6F9B"/>-->
+
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Background" Value="#EBDFFA"/>
@@ -58,16 +57,20 @@
 
         <!--ResultBorder-->
         <Style TargetType="Border" x:Key="ResultBorder">
-            <!--<Setter Property="BorderBrush" Value="#7E6F9B"/>-->
+
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Background" Value="#C1E1E0"/>
             <Setter Property="Margin" Value="10,5,10,5"/>
+            <Setter Property="Padding" Value="10,10,10,10"/>
         </Style>
-        
+
         <!--ResultBlock-->
         <Style TargetType="TextBlock" x:Key="ResultBlock">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinHeight" Value="120"/>
+            <Setter Property="MinWidth" Value="400"/>
+            <Setter Property="Background" Value="#F2F8F8"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="BorderBrush" Value="#51B8AE"/>
@@ -76,7 +79,7 @@
                 </Style>
             </Style.Resources>
         </Style>
-       
+
 
     </Window.Resources>
 
@@ -85,20 +88,21 @@
 
         <!--Grid definiton-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.15*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.2*"/>
-            <ColumnDefinition Width="0.6*"/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="33*"/>
         </Grid.ColumnDefinitions>
 
         <!--Title-->
 
-        <Label FontWeight="Bold">
+        <Label FontWeight="ExtraBold" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <Label.Content>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -115,8 +119,10 @@
 
 
         <!--Input Form-->
-        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="1">
-            <StackPanel Style="{StaticResource InputPanel}" Name="spInput">
+        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="1" Margin="10,5,10,5">
+
+            <StackPanel Style="{StaticResource Panel}" Name="spInput">
+                <Label Content="Input" FontSize="24" Foreground="#685190" FontWeight="Bold"/>
                 <Label Content="_Regex:" Target="{Binding ElementName=tbRegex}"></Label>
                 <TextBox x:Name="tbRegex" Style="{StaticResource TextBoxStyle}" IsTabStop="True" ></TextBox>
 
@@ -133,9 +139,15 @@
         </Border>
 
         <!--Result Form-->
-        <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="1">
-            <TextBlock Style="{StaticResource ResultBlock}" Name="ResultBlock" >
-            </TextBlock>
+        <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="1" Margin="10,5,10,5">
+
+            <StackPanel Style="{StaticResource Panel}" Name="spOutput">
+                <Label Content="Results" FontSize="24" Foreground="#2F746D" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}"/>
+                <Border Margin="5" Padding="10" Background="#F2F8F8" CornerRadius="10">
+                    <TextBlock Name="ResultsTB" Style="{StaticResource ResultBlock}"></TextBlock>
+                </Border>
+                
+            </StackPanel>
         </Border>
     </Grid>
 </Window>
