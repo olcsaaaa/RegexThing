@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
-        Title="Regex validation" Height="450" Width="800" ResizeMode="CanResizeWithGrip" SizeToContent="Height" MinHeight="600" MinWidth="800" MaxHeight="900" MaxWidth="1600">
+        Title="Regex validation" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800">
 
     <Window.Resources>
 
@@ -94,15 +94,17 @@
             <RowDefinition Height="0.25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="135*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="415*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="132*"/>
         </Grid.ColumnDefinitions>
 
         <!--Title-->
 
-        <Label FontWeight="ExtraBold" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+        <Label FontWeight="ExtraBold" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="6,0,0,0">
             <Label.Content>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -119,7 +121,7 @@
 
 
         <!--Input Form-->
-        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="1" Margin="10,5,10,5">
+        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="2" Margin="10,5,10,5" Grid.ColumnSpan="2">
 
             <StackPanel Style="{StaticResource Panel}" Name="spInput">
                 <Label Content="Input" FontSize="24" Foreground="#685190" FontWeight="Bold"/>
@@ -128,7 +130,8 @@
 
                 <Label Content="_Sample:" Target="{Binding ElementName=tbSample}"></Label>
                 <TextBox x:Name="tbSample" Style="{StaticResource TextBoxStyle}" IsTabStop="True"></TextBox>
-                <Button BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="#887BA3" Height="25" MinWidth="50" MaxWidth="150" Content="Go Diego go!" Foreground="#F5EBFF" Padding="10,3,10,3" Margin="0,10,0,0" Grid.IsSharedSizeScope="True" IsTabStop="False">
+
+                <Button Click="Button_Click" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="#887BA3" Height="25" MinWidth="50" MaxWidth="150" Content="split the string" Foreground="#F5EBFF" Padding="10,3,10,3" Margin="0,20,0,0" Grid.IsSharedSizeScope="True" IsTabStop="False" IsDefault="True">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -139,14 +142,14 @@
         </Border>
 
         <!--Result Form-->
-        <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="1" Margin="10,5,10,5">
+        <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="2" Margin="10,5,10,5" Grid.ColumnSpan="2">
 
             <StackPanel Style="{StaticResource Panel}" Name="spOutput">
                 <Label Content="Results" FontSize="24" Foreground="#2F746D" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}"/>
                 <Border Margin="5" Padding="10" Background="#F2F8F8" CornerRadius="10">
                     <TextBlock Name="ResultsTB" Style="{StaticResource ResultBlock}"></TextBlock>
                 </Border>
-                
+
             </StackPanel>
         </Border>
     </Grid>

@@ -7,4 +7,20 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="x-octagon.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="x-octagon.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Split\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
 </Project>

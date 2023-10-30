@@ -1,0 +1,63 @@
+﻿<Window x:Class="RegexThingWpf.WarningDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegexThingWpf"
+        mc:Ignorable="d"
+        Title="Warning" Height="250" Width="400" Background="#FFF2F8F8"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" SizeToContent="Width" Topmost="True">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.30*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1" Grid.Column="0" Margin="10">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
+                            <GeometryDrawing Brush="#51B8AE" Geometry="F1 M16,16z M0,0z M7.938,2.016A0.13,0.13,0,0,1,8.002,2A0.13,0.13,0,0,1,8.065,2.016A0.146,0.146,0,0,1,8.119,2.073L14.976,13.74C15.012,13.8,15.011,13.864,14.978,13.923A0.163,0.163,0,0,1,14.924,13.983A0.116,0.116,0,0,1,14.858,14L1.146,14A0.115,0.115,0,0,1,1.08,13.983A0.163,0.163,0,0,1,1.026,13.923A0.176,0.176,0,0,1,1.028,13.74L7.884,2.073A0.147,0.147,0,0,1,7.938,2.016z M8.982,1.566A1.13,1.13,0,0,0,7.022,1.566L0.165,13.233C-0.292,14.011,0.256,15,1.145,15L14.858,15C15.747,15,16.296,14.01,15.838,13.233L8.982,1.566z" />
+                            <GeometryDrawing Brush="#51B8AE" Geometry="F1 M16,16z M0,0z M7.002,12A1,1,0,1,1,9.002,12A1,1,0,0,1,7.002,12z M7.1,5.995A0.905,0.905,0,1,1,8.9,5.995L8.55,9.502A0.552,0.552,0,0,1,7.45,9.502L7.1,5.995z" />
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,25,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Background="#FF51B8AE">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Background" Value="#887BA3"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Border.Style>
+                <Label Name="WarningHeader"  Foreground="#FFF2F8F8" FontSize="16" FontWeight="SemiBold" Content="Foo" UseLayoutRounding="True" VerticalContentAlignment="Center" Padding="10,5,5,5"/>
+            </Border>
+            <Border Grid.Row="1" Background="#FFC1E1E0" BorderBrush="White">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Background" Value="#DECDF5"/>
+                        <Setter Property="BorderBrush" Value="#887BA3"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Border.Style>
+                <Label x:Name="WarningBody" Foreground="#FF2F746D" Content="bar" VerticalContentAlignment="Center" Padding="10,5,5,5" UseLayoutRounding="True"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
