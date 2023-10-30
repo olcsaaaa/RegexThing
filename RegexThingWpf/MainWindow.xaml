@@ -1,0 +1,141 @@
+﻿<Window x:Class="RegexThingWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegexThingWpf"
+        mc:Ignorable="d"
+        Title="Regex validation" Height="450" Width="800" ResizeMode="CanResizeWithGrip" SizeToContent="Height" MinHeight="450" MinWidth="800" MaxHeight="900" MaxWidth="1600">
+
+    <Window.Resources>
+
+        <!--TextBoxStyle-->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="MinWidth" Value="400" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10,3,10,0"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!--ButtonStyle-->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="MaxWidth" Value="150"/>
+
+            <Setter Property="Background" Value="#DECDF5"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!--InputPanel-->
+        <Style TargetType="StackPanel" x:Key="InputPanel">
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!--InputBorder-->
+        <Style TargetType="Border" x:Key="InputBorder">
+            <!--<Setter Property="BorderBrush" Value="#7E6F9B"/>-->
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="#EBDFFA"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+        </Style>
+
+        <!--ResultBorder-->
+        <Style TargetType="Border" x:Key="ResultBorder">
+            <!--<Setter Property="BorderBrush" Value="#7E6F9B"/>-->
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="#C1E1E0"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+        </Style>
+        
+        <!--ResultBlock-->
+        <Style TargetType="TextBlock" x:Key="ResultBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#51B8AE"/>
+                    <Setter Property="BorderThickness" Value="2px"/>
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+       
+
+    </Window.Resources>
+
+    <!--        Content         -->
+    <Grid>
+
+        <!--Grid definiton-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Title-->
+
+        <Label FontWeight="Bold">
+            <Label.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Foreground="#887BA3" Grid.Row="0" FontSize="24">Regex</TextBlock>
+                    <TextBlock Foreground="#51B8AE" Grid.Row="1" FontSize="24">Splitter</TextBlock>
+                </Grid>
+            </Label.Content>
+        </Label>
+
+
+
+
+        <!--Input Form-->
+        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="1">
+            <StackPanel Style="{StaticResource InputPanel}" Name="spInput">
+                <Label Content="_Regex:" Target="{Binding ElementName=tbRegex}"></Label>
+                <TextBox x:Name="tbRegex" Style="{StaticResource TextBoxStyle}" IsTabStop="True" ></TextBox>
+
+                <Label Content="_Sample:" Target="{Binding ElementName=tbSample}"></Label>
+                <TextBox x:Name="tbSample" Style="{StaticResource TextBoxStyle}" IsTabStop="True"></TextBox>
+                <Button BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="#887BA3" Height="25" MinWidth="50" MaxWidth="150" Content="Go Diego go!" Foreground="#F5EBFF" Padding="10,3,10,3" Margin="0,10,0,0" Grid.IsSharedSizeScope="True" IsTabStop="False">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!--Result Form-->
+        <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="1">
+            <TextBlock Style="{StaticResource ResultBlock}" Name="ResultBlock" >
+            </TextBlock>
+        </Border>
+    </Grid>
+</Window>
