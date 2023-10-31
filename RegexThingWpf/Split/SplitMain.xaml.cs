@@ -57,6 +57,12 @@ namespace RegexThingWpf
             try
             {
                 string[] res = Regex.Split(sample, regex);
+                string r = "";
+                foreach (string s in res)
+                {
+                    r+= $"{s}\r\n";
+                }
+                ResultsTB.Text = r ;
             }
             catch (Exception ex)
             {
@@ -68,6 +74,13 @@ namespace RegexThingWpf
                 ed.ExceptionBody.Text = body;
             }
 
+        }
+
+        private void BackImg_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+             MainWindow mw = new MainWindow();
+            mw.Show();
+            Close();
         }
     }
 }
