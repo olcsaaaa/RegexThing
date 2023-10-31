@@ -148,6 +148,8 @@
                 <TextBox x:Name="tbReplacement" Style="{StaticResource TextBoxStyle}" IsTabStop="True"></TextBox>
 
                 <Button 
+                    Name="CalculateBtn"
+                    Click="CalculateBtn_Click"
                     BorderThickness="0"
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Height="25" 

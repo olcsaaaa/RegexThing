@@ -98,8 +98,18 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!--Title-->
-
+        <Image Height="25" Width="25" HorizontalAlignment="Left" Margin="10" MouseDown="BackImg_MouseDown" Name="BackImg" Cursor="Hand" VerticalAlignment="Top">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
+                            <GeometryDrawing Brush="#887BA3" Geometry="F0 M16,16z M0,0z M15,8A0.5,0.5,0,0,0,14.5,7.5L2.707,7.5 5.854,4.354A0.5,0.5,0,1,0,5.146,3.646L1.146,7.646A0.5,0.5,0,0,0,1.146,8.354L5.146,12.354A0.5,0.5,0,0,0,5.854,11.646L2.707,8.5 14.5,8.5A0.5,0.5,0,0,0,15,8z" />
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+        
         <Label FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2
                " VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="6,0,0,0">
             <Label.Content>

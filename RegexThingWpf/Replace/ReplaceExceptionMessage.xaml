@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
         Title="Exception" Height="250" Width="400"
-        Background="#FFFBEFF4" WindowStartupLocation="CenterOwner">
+        Background="#FFFBEFF4" WindowStartupLocation="CenterOwner" SizeToContent="Width" ResizeMode="CanResizeWithGrip" Topmost="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.30*"/>
