@@ -15,13 +15,20 @@ using System.Windows.Shapes;
 namespace RegexThingWpf
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for SplitMain.xaml
     /// </summary>
-    public partial class WarningDialog : Window
+    public partial class ReplaceMain : Window
     {
-        public WarningDialog()
+        public ReplaceMain()
         {
             InitializeComponent();
+        }
+
+        private void BackImg_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }

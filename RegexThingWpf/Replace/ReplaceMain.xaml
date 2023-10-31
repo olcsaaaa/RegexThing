@@ -1,0 +1,186 @@
+﻿<Window x:Class="RegexThingWpf.ReplaceMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegexThingWpf"
+        mc:Ignorable="d"
+        Title="Regex splitter" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800">
+    <Window.Resources>
+
+        <!--TextBoxStyle-->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="MinWidth" Value="400" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Padding" Value="10,3,10,0"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!--ButtonStyle-->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="MaxWidth" Value="150"/>
+
+            <Setter Property="Background" Value="#DECDF5"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!--Panel-->
+        <Style TargetType="StackPanel" x:Key="Panel">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!--InputBorder-->
+        <Style TargetType="Border" x:Key="InputBorder">
+
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="#EBDFFA"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+        </Style>
+
+        <!--ResultBorder-->
+        <Style TargetType="Border" x:Key="ResultBorder">
+
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="#C1E1E0"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+            <Setter Property="Padding" Value="10,10,10,10"/>
+        </Style>
+
+        <!--ResultBlock-->
+        <Style TargetType="TextBlock" x:Key="ResultBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinHeight" Value="120"/>
+            <Setter Property="MinWidth" Value="400"/>
+            <Setter Property="Background" Value="#F2F8F8"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#51B8AE"/>
+                    <Setter Property="BorderThickness" Value="2px"/>
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+
+    </Window.Resources>
+
+    <!--        Content         -->
+    <Grid>
+
+        <!--Grid definiton-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Height="25" Width="25" HorizontalAlignment="Left" Margin="10" MouseDown="BackImg_MouseDown" Name="BackImg" Cursor="Hand" VerticalAlignment="Top">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
+                            <GeometryDrawing Brush="#FFB1778E" Geometry="F0 M16,16z M0,0z M15,8A0.5,0.5,0,0,0,14.5,7.5L2.707,7.5 5.854,4.354A0.5,0.5,0,1,0,5.146,3.646L1.146,7.646A0.5,0.5,0,0,0,1.146,8.354L5.146,12.354A0.5,0.5,0,0,0,5.854,11.646L2.707,8.5 14.5,8.5A0.5,0.5,0,0,0,15,8z" />
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+      
+        
+        <!--Title-->
+
+        <Label FontWeight="ExtraBold" 
+   Grid.Row="0" 
+   Grid.Column="2" 
+   VerticalAlignment="Center" 
+   HorizontalAlignment="Left" 
+   Margin="6,0,0,0"
+>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="#FFB1778E" Grid.Row="0" FontSize="24" VerticalAlignment="Bottom" HorizontalAlignment="Left"><Run Text="Regex"/></TextBlock>
+                <TextBlock Foreground="#FF76A9BD" Grid.Row="1" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0,0,0,5"><Run Text="Replacer"/></TextBlock>
+            </Grid>
+        </Label>
+
+
+
+
+        <!--Input Form-->
+        <Border Style="{StaticResource InputBorder}" Grid.Column="1" Margin="10,82,10,5" Background="#FFF2CFDD" Grid.RowSpan="2">
+
+            <StackPanel Style="{StaticResource Panel}" Name="spInput">
+                <Label Content="Input" FontSize="24" Foreground="#FF914B67" FontWeight="Bold"/>
+
+                <Label Content="_Regex:" Target="{Binding ElementName=tbRegex}"></Label>
+                <TextBox x:Name="tbRegex" Style="{StaticResource TextBoxStyle}" IsTabStop="True" ></TextBox>
+
+                <Label Content="_Sample:" Target="{Binding ElementName=tbSample}"></Label>
+                <TextBox x:Name="tbSample" Style="{StaticResource TextBoxStyle}" IsTabStop="True"></TextBox>
+
+                <Label Content="_Replacement:" Target="{Binding ElementName=tbSample}"></Label>
+                <TextBox x:Name="tbReplacement" Style="{StaticResource TextBoxStyle}" IsTabStop="True"></TextBox>
+
+                <Button 
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Height="25" 
+                    MinWidth="50"
+                    MaxWidth="150"
+                    Content="split the string"
+                    Foreground="#FFFBEFF4"
+                    Padding="10,3,10,3"
+                    Margin="0,10,0,10"
+                    Grid.IsSharedSizeScope="True"
+                    IsTabStop="False"
+                    IsDefault="True"
+                    Background="#FF914B67">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!--Result Form-->
+        <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="1
+                " Margin="10,5,10,5" Background="#FFB1D1DE" Padding="0,0,0,0">
+
+            <StackPanel Style="{StaticResource Panel}" Name="spOutput" VerticalAlignment="Top">
+                <Label Content="Results" FontSize="24" Foreground="#2F746D" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}" VerticalAlignment="Top"/>
+                <Border Margin="5" Padding="10" Background="#FFEBF9FF" CornerRadius="10">
+                    <TextBlock Name="ResultsTB" Style="{StaticResource ResultBlock}" Background="#FFEBF9FF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="138"></TextBlock>
+                </Border>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

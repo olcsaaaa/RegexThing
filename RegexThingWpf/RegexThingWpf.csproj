@@ -16,11 +16,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Split\" />
+    <Page Include="App.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="App.xaml" />
+    <Compile Update="Replace\ReplaceExceptionMessage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Replace\ReplaceMain.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Replace\ReplaceWarningMessage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

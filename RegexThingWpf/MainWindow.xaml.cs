@@ -27,47 +27,18 @@ namespace RegexThingWpf
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ReplaceBtn_Click(object sender, RoutedEventArgs e)
         {
-            WarningDialog warningDialog = new();
-            ExceptionMessage ed = new();
-            string regex = tbRegex.Text;
-            string sample = tbSample.Text;
-            if (regex == String.Empty && sample == String.Empty)
-            {
-                warningDialog.Show();
-                warningDialog.WarningHeader.Content = "Regex and Sample fields are empty";
-                warningDialog.WarningBody.Content = "Please fill out Regex and Sample fields to continue";
-                tbRegex.Focus();
-            }
-            else if (regex == String.Empty)
-            {
-                warningDialog.Show();
-                warningDialog.WarningHeader.Content = "Regex field is empty";
-                warningDialog.WarningBody.Content = "Please fill out Regex field to continue";
-                tbRegex.Focus();
-            }
-            else if (sample == String.Empty)
-            {
-                warningDialog.Show();
-                warningDialog.WarningHeader.Content = "Sample field is empty";
-                warningDialog.WarningBody.Content = "Please fill out Sample field to continue";
-                tbSample.Focus();
-            }
-            
-            try {
-                string[] res = Regex.Split(sample, regex);
-            }catch(Exception ex)
-            {
-                string title = ex.GetType().Name;
-                string body = ex.Message;
-                ed.Show();
-                SystemSounds.Exclamation.Play();
-                ed.ExceptionType.Content = title;
-                ed.ExceptionBody.Text = body;
-            }
-
+            ReplaceMain rm = new();
+            rm.Show();
+            Close();
         }
-        
+
+        private void SplitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SplitMain sm = new();
+            sm.Show();
+            Close();
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,13 +17,11 @@ namespace RegexThingWpf
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class ExceptionMessage : Window
+    public partial class SplitWarningDialog : Window
     {
-        public ExceptionMessage()
+        public SplitWarningDialog()
         {
-            SystemSounds.Exclamation.Play();
             InitializeComponent();
-            
         }
     }
 }
