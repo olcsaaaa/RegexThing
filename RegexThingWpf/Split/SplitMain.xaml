@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
-        Title="Regex splitter" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800">
+        Title="Regex splitter" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800" Background="#FFF3EBFC">
     <Window.Resources>
 
         <!--TextBoxStyle-->
@@ -90,7 +90,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -103,7 +102,7 @@
                 <DrawingImage>
                     <DrawingImage.Drawing>
                         <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
-                            <GeometryDrawing Brush="#887BA3" Geometry="F0 M16,16z M0,0z M15,8A0.5,0.5,0,0,0,14.5,7.5L2.707,7.5 5.854,4.354A0.5,0.5,0,1,0,5.146,3.646L1.146,7.646A0.5,0.5,0,0,0,1.146,8.354L5.146,12.354A0.5,0.5,0,0,0,5.854,11.646L2.707,8.5 14.5,8.5A0.5,0.5,0,0,0,15,8z" />
+                            <GeometryDrawing Brush="#FF685190" Geometry="F0 M16,16z M0,0z M15,8A0.5,0.5,0,0,0,14.5,7.5L2.707,7.5 5.854,4.354A0.5,0.5,0,1,0,5.146,3.646L1.146,7.646A0.5,0.5,0,0,0,1.146,8.354L5.146,12.354A0.5,0.5,0,0,0,5.854,11.646L2.707,8.5 14.5,8.5A0.5,0.5,0,0,0,15,8z" />
                         </DrawingGroup>
                     </DrawingImage.Drawing>
                 </DrawingImage>
@@ -118,8 +117,8 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Foreground="#887BA3" Grid.Row="0" FontSize="24">Regex</TextBlock>
-                    <TextBlock Foreground="#51B8AE" Grid.Row="1" FontSize="24">Splitter</TextBlock>
+                    <TextBlock Foreground="#FF685190" Grid.Row="0" FontSize="24">Regex</TextBlock>
+                    <TextBlock Foreground="#FF8C78AC" Grid.Row="1" FontSize="24">Splitter</TextBlock>
                 </Grid>
             </Label.Content>
         </Label>
@@ -128,17 +127,17 @@
 
 
         <!--Input Form-->
-        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="1" Margin="10,5,10,5">
+        <Border Style="{StaticResource InputBorder}" Grid.Row="1" Grid.Column="1" Margin="10,5,10,5" Background="#FFD2C5E4">
 
             <StackPanel Style="{StaticResource Panel}" Name="spInput">
                 <Label Content="Input" FontSize="24" Foreground="#685190" FontWeight="Bold"/>
                 <Label Content="_Regex:" Target="{Binding ElementName=tbRegex}"></Label>
-                <TextBox x:Name="tbRegex" Style="{StaticResource TextBoxStyle}" IsTabStop="True" ></TextBox>
+                <TextBox x:Name="tbRegex" Style="{StaticResource TextBoxStyle}" IsTabStop="True" Background="#FFF4EDFC" ></TextBox>
 
                 <Label Content="_Sample:" Target="{Binding ElementName=tbSample}"></Label>
-                <TextBox x:Name="tbSample" Style="{StaticResource TextBoxStyle}" IsTabStop="True"></TextBox>
+                <TextBox x:Name="tbSample" Style="{StaticResource TextBoxStyle}" IsTabStop="True" Background="#FFF4EDFC"></TextBox>
 
-                <Button Click="Button_Click" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="#887BA3" Height="25" MinWidth="50" MaxWidth="150" Content="split the string" Foreground="#F5EBFF" Padding="10,3,10,3" Margin="0,20,0,0" Grid.IsSharedSizeScope="True" IsTabStop="False" IsDefault="True">
+                <Button Click="Button_Click" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="#FF8C78AC" Height="25" MinWidth="50" MaxWidth="150" Content="split the string" Foreground="#FFF4EDFC" Padding="10,3,10,3" Margin="0,20,0,0" Grid.IsSharedSizeScope="True" IsTabStop="False" IsDefault="True">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -150,12 +149,12 @@
 
         <!--Result Form-->
         <Border Style="{StaticResource ResultBorder}" Grid.Row="2" Grid.Column="1
-                " Margin="10,5,10,5">
+                " Margin="10,5,10,5" Background="#FFEBE0F7">
 
             <StackPanel Style="{StaticResource Panel}" Name="spOutput">
-                <Label Content="Results" FontSize="24" Foreground="#2F746D" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}"/>
-                <Border Margin="5" Padding="10" Background="#F2F8F8" CornerRadius="10">
-                    <TextBlock Name="ResultsTB" Style="{StaticResource ResultBlock}"></TextBlock>
+                <Label Content="Results" FontSize="24" Foreground="#FF685190" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}"/>
+                <Border Margin="5" Padding="10" Background="#FFF6F0FC" CornerRadius="10">
+                    <TextBlock Name="ResultsTB" Style="{StaticResource ResultBlock}" Background="#FFF6F0FC"></TextBlock>
                 </Border>
 
             </StackPanel>

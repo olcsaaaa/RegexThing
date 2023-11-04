@@ -28,8 +28,8 @@
                 <DrawingImage>
                     <DrawingImage.Drawing>
                         <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
-                            <GeometryDrawing Brush="#3B819C" Geometry="F0 M16,16z M0,0z M0,3.5A0.5,0.5,0,0,1,0.5,3L1,3C3.202,3 4.827,4.24 5.874,5.418 6.364,5.97 6.739,6.52 7,6.95 7.26,6.52 7.636,5.97 8.126,5.418 9.173,4.24 10.798,3 13,3L13,4C11.202,4,9.827,5.01,8.874,6.082A9.624,9.624,0,0,0,7.556,8A9.624,9.624,0,0,0,8.873,9.918C9.828,10.99,11.204,12,13,12L13,13C10.798,13,9.173,11.76,8.126,10.582A10.595,10.595,0,0,1,7,9.05C6.74,9.48 6.364,10.03 5.874,10.582 4.827,11.76 3.202,13 1,13L0.5,13A0.5,0.5,0,0,1,0.5,12L1,12C2.798,12,4.173,10.99,5.126,9.918A9.624,9.624,0,0,0,6.444,8A9.624,9.624,0,0,0,5.127,6.082C4.172,5.01,2.796,4,1,4L0.5,4A0.5,0.5,0,0,1,0,3.5z" />
-                            <GeometryDrawing Brush="#3B819C" Geometry="F1 M16,16z M0,0z M13,5.466L13,1.534A0.25,0.25,0,0,1,13.41,1.342L15.77,3.308C15.89,3.408,15.89,3.592,15.77,3.692L13.41,5.658A0.25,0.25,0,0,1,13,5.466z M13,14.466L13,10.534A0.25,0.25,0,0,1,13.41,10.342L15.77,12.308C15.89,12.408,15.89,12.592,15.77,12.692L13.41,14.658A0.25,0.25,0,0,1,13,14.466z" />
+                            <GeometryDrawing Brush="#1E6D8B" Geometry="F0 M16,16z M0,0z M0,3.5A0.5,0.5,0,0,1,0.5,3L1,3C3.202,3 4.827,4.24 5.874,5.418 6.364,5.97 6.739,6.52 7,6.95 7.26,6.52 7.636,5.97 8.126,5.418 9.173,4.24 10.798,3 13,3L13,4C11.202,4,9.827,5.01,8.874,6.082A9.624,9.624,0,0,0,7.556,8A9.624,9.624,0,0,0,8.873,9.918C9.828,10.99,11.204,12,13,12L13,13C10.798,13,9.173,11.76,8.126,10.582A10.595,10.595,0,0,1,7,9.05C6.74,9.48 6.364,10.03 5.874,10.582 4.827,11.76 3.202,13 1,13L0.5,13A0.5,0.5,0,0,1,0.5,12L1,12C2.798,12,4.173,10.99,5.126,9.918A9.624,9.624,0,0,0,6.444,8A9.624,9.624,0,0,0,5.127,6.082C4.172,5.01,2.796,4,1,4L0.5,4A0.5,0.5,0,0,1,0,3.5z" />
+                            <GeometryDrawing Brush="#1E6D8B" Geometry="F1 M16,16z M0,0z M13,5.466L13,1.534A0.25,0.25,0,0,1,13.41,1.342L15.77,3.308C15.89,3.408,15.89,3.592,15.77,3.692L13.41,5.658A0.25,0.25,0,0,1,13,5.466z M13,14.466L13,10.534A0.25,0.25,0,0,1,13.41,10.342L15.77,12.308C15.89,12.408,15.89,12.592,15.77,12.692L13.41,14.658A0.25,0.25,0,0,1,13,14.466z" />
                         </DrawingGroup>
                     </DrawingImage.Drawing>
                 </DrawingImage>
@@ -48,8 +48,8 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Foreground="#FFB1778E" Grid.Row="0" FontSize="24" VerticalAlignment="Bottom" HorizontalAlignment="Left"><Run Text="Regex"/></TextBlock>
-                <TextBlock Foreground="#FF76A9BD" Grid.Row="1" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0,0,0,5"><Run Text="Replacer"/></TextBlock>
+                <TextBlock Foreground="#FF1E6D8B" Grid.Row="0" FontSize="24" VerticalAlignment="Bottom" HorizontalAlignment="Left"><Run Text="Regex"/></TextBlock>
+                <TextBlock Foreground="#FF609AB1" Grid.Row="1" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0,0,0,5"><Run Text="Replacer"/></TextBlock>
             </Grid>
         </Label>
         <Button Click="ReplaceBtn_Click"
@@ -57,12 +57,12 @@
         Grid.Column="2"
         Grid.Row="1"
         BorderThickness="2" 
-        Background="#FFB1778E" 
+        Background="#FF5995AD" 
         Height="40" 
         MinWidth="25" 
         MaxWidth="75" 
         Content="Open" 
-        Foreground="#FFFBEFF4" 
+        Foreground="#FFDDEFF7" 
         Padding="10,3,10,3" 
         IsTabStop="True"
         HorizontalAlignment="Left"
@@ -83,7 +83,7 @@
                 <DrawingImage>
                     <DrawingImage.Drawing>
                         <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
-                            <GeometryDrawing Brush="#51B8AE" Geometry="F1 M16,16z M0,0z M3.5,3.5C2.886,2.616,3.426,1.538,4.358,1L8,7.226 11.642,1C12.574,1.538,13.114,2.616,12.5,3.5L8.81,8.61 10.366,11.271A2.5,2.5,0,1,1,9.572,11.908L8,9.73 6.428,11.907A2.5,2.5,0,1,1,5.634,11.27L7.19,8.61 3.5,3.5z M6,13.5A1.5,1.5,0,1,0,3,13.5A1.5,1.5,0,0,0,6,13.5z M13,13.5A1.5,1.5,0,1,0,10,13.5A1.5,1.5,0,0,0,13,13.5z" />
+                            <GeometryDrawing Brush="#FF685190" Geometry="F1 M16,16z M0,0z M3.5,3.5C2.886,2.616,3.426,1.538,4.358,1L8,7.226 11.642,1C12.574,1.538,13.114,2.616,12.5,3.5L8.81,8.61 10.366,11.271A2.5,2.5,0,1,1,9.572,11.908L8,9.73 6.428,11.907A2.5,2.5,0,1,1,5.634,11.27L7.19,8.61 3.5,3.5z M6,13.5A1.5,1.5,0,1,0,3,13.5A1.5,1.5,0,0,0,6,13.5z M13,13.5A1.5,1.5,0,1,0,10,13.5A1.5,1.5,0,0,0,13,13.5z" />
                         </DrawingGroup>
                     </DrawingImage.Drawing>
                 </DrawingImage>
@@ -103,8 +103,8 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Foreground="#887BA3" Grid.Row="0" FontSize="24"><Run Text="Regex"/></TextBlock>
-                <TextBlock Foreground="#51B8AE" Grid.Row="1" FontSize="24" Margin="0,2,0,0"><Run Text="Splitter"/></TextBlock>
+                <TextBlock Foreground="#FF685190" Grid.Row="0" FontSize="24"><Run Text="Regex"/></TextBlock>
+                <TextBlock Foreground="#FF8C78AC" Grid.Row="1" FontSize="24" Margin="0,2,0,0"><Run Text="Splitter"/></TextBlock>
             </Grid>
         </Label>
         <Button Click="SplitBtn_Click"
@@ -112,7 +112,7 @@
                 Grid.Column="2"
                 Grid.Row="2"
                 BorderThickness="2" 
-                Background="#887BA3" 
+                Background="#FF8C78AC" 
                 Height="40" 
                 MinWidth="25" 
                 MaxWidth="75" 
