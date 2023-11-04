@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
         Title="Exception" Height="250" Width="400"
-        Background="#FFFBEFF4" WindowStartupLocation="CenterOwner" SizeToContent="Width" ResizeMode="CanResizeWithGrip" Topmost="True">
+        Background="#FFEBF9FF" WindowStartupLocation="CenterOwner" SizeToContent="Width" ResizeMode="CanResizeWithGrip" Topmost="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.30*"/>
@@ -17,13 +17,13 @@
             <RowDefinition Height="0.6*"/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="1" Grid.Column="0" Margin="20">
+        <Image Grid.Row="1" Grid.Column="0" Margin="10">
             <Image.Source>
                 <DrawingImage>
                     <DrawingImage.Drawing>
                         <DrawingGroup ClipGeometry="M0,0 V16 H16 V0 H0 Z">
-                            <GeometryDrawing Brush="#914B67" Geometry="F1 M16,16z M0,0z M4.54,0.146A0.5,0.5,0,0,1,4.893,0L11.107,0A0.5,0.5,0,0,1,11.46,0.146L15.854,4.54A0.5,0.5,0,0,1,16,4.893L16,11.107A0.5,0.5,0,0,1,15.854,11.46L11.46,15.854A0.5,0.5,0,0,1,11.107,16L4.893,16A0.5,0.5,0,0,1,4.54,15.854L0.146,11.46A0.5,0.5,0,0,1,0,11.107L0,4.893A0.5,0.5,0,0,1,0.146,4.54L4.54,0.146z M5.1,1L1,5.1 1,10.9 5.1,15 10.9,15 15,10.9 15,5.1 10.9,1 5.1,1z" />
-                            <GeometryDrawing Brush="#914B67" Geometry="F1 M16,16z M0,0z M4.646,4.646A0.5,0.5,0,0,1,5.354,4.646L8,7.293 10.646,4.646A0.5,0.5,0,0,1,11.354,5.354L8.707,8 11.354,10.646A0.5,0.5,0,0,1,10.646,11.354L8,8.707 5.354,11.354A0.5,0.5,0,0,1,4.646,10.646L7.293,8 4.646,5.354A0.5,0.5,0,0,1,4.646,4.646z" />
+                            <GeometryDrawing Brush="#1E6D8B" Geometry="F1 M16,16z M0,0z M4.54,0.146A0.5,0.5,0,0,1,4.893,0L11.107,0A0.5,0.5,0,0,1,11.46,0.146L15.854,4.54A0.5,0.5,0,0,1,16,4.893L16,11.107A0.5,0.5,0,0,1,15.854,11.46L11.46,15.854A0.5,0.5,0,0,1,11.107,16L4.893,16A0.5,0.5,0,0,1,4.54,15.854L0.146,11.46A0.5,0.5,0,0,1,0,11.107L0,4.893A0.5,0.5,0,0,1,0.146,4.54L4.54,0.146z M5.1,1L1,5.1 1,10.9 5.1,15 10.9,15 15,10.9 15,5.1 10.9,1 5.1,1z" />
+                            <GeometryDrawing Brush="#1E6D8B" Geometry="F1 M16,16z M0,0z M4.646,4.646A0.5,0.5,0,0,1,5.354,4.646L8,7.293 10.646,4.646A0.5,0.5,0,0,1,11.354,5.354L8.707,8 11.354,10.646A0.5,0.5,0,0,1,10.646,11.354L8,8.707 5.354,11.354A0.5,0.5,0,0,1,4.646,10.646L7.293,8 4.646,5.354A0.5,0.5,0,0,1,4.646,4.646z" />
                         </DrawingGroup>
                     </DrawingImage.Drawing>
                 </DrawingImage>
@@ -34,7 +34,7 @@
                 <RowDefinition Height="0.3*"/>
                 <RowDefinition Height="0.7*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" Background="#FFB1778E">
+            <Border Grid.Row="0" Background="#FF1E6D8B">
                 <Border.Style>
                     <Style TargetType="Border">
                         <Setter Property="Margin" Value="2"/>
@@ -43,19 +43,18 @@
                         <Setter Property="CornerRadius" Value="10"/>
                     </Style>
                 </Border.Style>
-                <Label Name="ExceptionType"  Foreground="#F5EBFF" FontSize="18" FontWeight="SemiBold"/>
+                <Label Name="ExceptionType"  Foreground="#FFEBF9FF" FontSize="18" FontWeight="SemiBold" Content="Foo"/>
             </Border>
-            <Border Grid.Row="1" Background="#FFF2CFDD">
+            <Border Grid.Row="1" Background="#FF94BDCE">
                 <Border.Style>
                     <Style TargetType="Border">
                         <Setter Property="Margin" Value="2"/>
                         <Setter Property="Background" Value="#DECDF5"/>
-                        <Setter Property="BorderBrush" Value="#887BA3"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="CornerRadius" Value="10"/>
                     </Style>
                 </Border.Style>
-                <TextBlock Margin="7" FontSize="11" Name="ExceptionBody" Foreground="#887BA3" TextWrapping="Wrap"/>
+                <TextBlock Margin="7" FontSize="11" x:Name="ExceptionBody" Foreground="#FF1E6D8B" TextWrapping="Wrap"><Run Language="hu-hu" Text="bar"/></TextBlock>
             </Border>
         </Grid>
         
