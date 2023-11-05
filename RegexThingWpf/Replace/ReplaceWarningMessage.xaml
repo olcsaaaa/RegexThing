@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
         Title="Warning" Height="250" Width="400" Background="#FFEBF9FF"
-        WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" SizeToContent="Width" Topmost="True">
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip" SizeToContent="Width" Topmost="True" Icon="/code.ico">
 
     <Grid>
         <Grid.ColumnDefinitions>

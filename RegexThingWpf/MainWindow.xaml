@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
-        Title="Choose a function" Height="230" Width="300" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="Choose a function" Height="230" Width="300" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/code.ico">
 
     <Window.Resources>
     </Window.Resources>

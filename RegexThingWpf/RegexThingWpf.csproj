@@ -1,34 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="x-octagon.svg" />
-  </ItemGroup>
+	<ItemGroup>
+	  <None Remove="code.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="x-octagon.svg" />
-  </ItemGroup>
+	<ItemGroup>
+		<Page Include="App.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Page Include="App.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+	  <Resource Include="code.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Replace\ReplaceExceptionMessage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Replace\ReplaceMain.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Replace\ReplaceWarningMessage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Replace\ReplaceExceptionMessage.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Replace\ReplaceMain.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Replace\ReplaceWarningMessage.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
-        Title="Regex splitter" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800" Background="#FFEBF9FF">
+        Title="Regex Replacer" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800" Background="#FFEBF9FF" Icon="/code.ico">
     <Window.Resources>
 
         <!--TextBoxStyle-->
@@ -177,7 +177,7 @@
                 " Margin="10,5,10,5" Background="#FFB5D4E1" Padding="0,0,0,0">
 
             <StackPanel Style="{StaticResource Panel}" Name="spOutput" VerticalAlignment="Top">
-                <Label Content="Results" FontSize="24" Foreground="#2F746D" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}" VerticalAlignment="Top"/>
+                <Label Content="Results" FontSize="24" Foreground="#FF1E6D8B" FontWeight="Bold" Target="{Binding ElementName=ResultsTB}" VerticalAlignment="Top"/>
                 <Border Margin="5" Padding="10" Background="#FFDDEFF7" CornerRadius="10">
                     <TextBlock Name="ResultsTB" Style="{StaticResource ResultBlock}" Background="#FFDDEFF7" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="138"></TextBlock>
                 </Border>

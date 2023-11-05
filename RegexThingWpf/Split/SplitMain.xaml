@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexThingWpf"
         mc:Ignorable="d"
-        Title="Regex splitter" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800" Background="#FFF3EBFC">
+        Title="Regex Splitter" Height="450" Width="800" ResizeMode="CanMinimize" MinHeight="600" MinWidth="800" Background="#FFF3EBFC" Icon="/code.ico">
     <Window.Resources>
 
         <!--TextBoxStyle-->
