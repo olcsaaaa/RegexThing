@@ -32,7 +32,7 @@ namespace RegexThingWpf
             string rgx = tbRegex.Text;
             if (string.IsNullOrEmpty(rgx) || string.IsNullOrEmpty(smpl))
             {
-                ReplaceWarningDialog dialog = new();
+                SplitWarningDialog dialog = new();
                 dialog.Show();
                 SystemSounds.Beep.Play();
                 dialog.WarningHeader.Content = "Fill out every field";
