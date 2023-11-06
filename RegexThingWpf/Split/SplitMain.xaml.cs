@@ -38,33 +38,37 @@ namespace RegexThingWpf
                 dialog.WarningHeader.Content = "Fill out every field";
                 dialog.WarningBody.Content = "One or more field is empty";
             }
-
-            try
+            else
             {
-                string[] res = Regex.Split(smpl, rgx);
-                string r = "";
-                foreach (string s in res)
+                try
                 {
-                    r+= $"{s}\r\n";
+                    string[] res = Regex.Split(smpl, rgx);
+                    string r = "";
+                    foreach (string s in res)
+                    {
+                        r += $"{s}\r\n";
+                    }
+                    ResultsTB.Text = r;
                 }
-                ResultsTB.Text = r ;
+                catch (Exception ex)
+                {
+                    SplitExceptionMessage ed = new SplitExceptionMessage();
+                    string title = ex.GetType().Name;
+                    string body = ex.Message;
+                    ed.Show();
+                    SystemSounds.Exclamation.Play();
+                    ed.ExceptionType.Content = title;
+                    ed.ExceptionBody.Text = body;
+                }
             }
-            catch (Exception ex)
-            {
-                SplitExceptionMessage ed = new SplitExceptionMessage();
-                string title = ex.GetType().Name;
-                string body = ex.Message;
-                ed.Show();
-                SystemSounds.Exclamation.Play();
-                ed.ExceptionType.Content = title;
-                ed.ExceptionBody.Text = body;
-            }
+
+
 
         }
 
         private void BackImg_MouseDown(object sender, MouseButtonEventArgs e)
         {
-             MainWindow mw = new MainWindow();
+            MainWindow mw = new MainWindow();
             mw.Show();
             Close();
         }

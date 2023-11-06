@@ -40,24 +40,29 @@ namespace RegexThingWpf
             string rplc = tbReplacement.Text;
             if (string.IsNullOrEmpty(rgx) || string.IsNullOrEmpty(smpl) || string.IsNullOrEmpty(rplc))
             {
+                SystemSounds.Beep.Play();
                 ReplaceWarningDialog dialog = new();
                 dialog.Show();
-                SystemSounds.Beep.Play();
                 dialog.WarningHeader.Content = "Fill out every field";
                 dialog.WarningBody.Content = "One or more field is empty";
             }
-            try
+            else
             {
-                ResultsTB.Text = Regex.Replace(smpl, rgx, rplc);
-            }catch (Exception ex)
-            {
-                ReplaceExceptionMessage rem = new();
-                rem.Show();
-                SystemSounds.Exclamation.Play();
-                rem.ExceptionType.Content = ex.GetType();
-                rem.ExceptionBody.Text = ex.Message;
-                tbRegex.Focus();
+                try
+                {
+                    ResultsTB.Text = Regex.Replace(smpl, rgx, rplc);
+                }
+                catch (Exception ex)
+                {
+                    SystemSounds.Exclamation.Play();
+                    ReplaceExceptionMessage rem = new();
+                    rem.Show();
+                    rem.ExceptionType.Content = ex.GetType();
+                    rem.ExceptionBody.Text = ex.Message;
+                    tbRegex.Focus();
+                }
             }
+
         }
     }
 }
